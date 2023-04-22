@@ -1,3 +1,24 @@
-﻿<h5>
-    FORM SAYFASI
-</h5>
+﻿@using Form_Project.Data.Entities
+@model List<Form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Form Adı</th>
+            <th>Form Açıklama</th>
+            <th>Form Oluşturulma Tarihi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.Name</th>
+                <th>@item.Description</th>
+                <th>@item.CreatedAt</th>            
+            </tr>
+        }
+
+    </tbody>
+
+</table>

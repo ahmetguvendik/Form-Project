@@ -1,0 +1,28 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Form_Project.Models;
+@model SignInUserModel;
+
+<form asp-action="SignIn" asp-controller="Home" method="post">
+
+    <div>
+        <label>Kullanici Adinizi Giriniz</label>
+        <input type="text" asp-for=@Model.UserName />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Sifrenizi Giriniz</label>
+        <input type="password" asp-for=@Model.Password />
+    </div>
+
+    <br />
+
+    <div>
+        <button>
+            Giriş Yap
+        </button>
+    </div>
+
+
+</form>

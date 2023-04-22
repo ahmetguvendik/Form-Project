@@ -8,6 +8,7 @@ namespace Form_Project.Data.Contexts
     public class FormContext : IdentityDbContext<AppUser, AppRole, int>
     {
         public DbSet<Form> Forms { get; set; }
+        public DbSet<Field> Fields { get; set; }
         public FormContext(DbContextOptions<FormContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)

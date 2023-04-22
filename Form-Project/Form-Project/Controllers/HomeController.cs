@@ -17,9 +17,33 @@ namespace Form_Project.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(CreateUserModel createUser) 
-        {   await _user.CreateUserAsync(createUser);
-            return View(); 
+        public async Task<IActionResult> Index(CreateUserModel createUser)
+        {
+            await _user.CreateUserAsync(createUser);
+            return View();
         }
+
+        public IActionResult SignIn()
+        {
+            return View(new SignInUserModel());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SignIn(SignInUserModel model)
+        {
+            if (ModelState.IsValid)
+            {
+               var users = await _user.SignInUserAsync(model);
+                if(users != null)
+                {
+                    return RedirectToAction("Index", "Form");
+                }
+                
+            }
+       
+
+            return View(model);
+        }
+
     }
 }
