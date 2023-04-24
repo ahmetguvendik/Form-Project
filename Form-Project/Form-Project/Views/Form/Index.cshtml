@@ -1,24 +1,59 @@
-﻿@using Form_Project.Data.Entities
-@model List<Form>
+﻿@model List<Form>
 
-<table>
-    <thead>
-        <tr>
-            <th>Form Adı</th>
-            <th>Form Açıklama</th>
-            <th>Form Oluşturulma Tarihi</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <th>@item.Name</th>
-                <th>@item.Description</th>
-                <th>@item.CreatedAt</th>            
-            </tr>
-        }
+    @{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
 
-    </tbody>
+    <head>
+        <title>Formlar</title>
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/jquery/jquery.slim.js"></script>
+    <script src="~/lib/jquery/jquery.slim.min.js"></script>   
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.rtl.css" rel="stylesheet" />
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet" />
+   
+    </head>
 
-</table>
+    <body>
+        <div class="container">
+            <div class="col-md-6">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">CreatedAt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model)
+                    {
+                        <tr>
+                            
+                            <th>@item.Id</th>
+                            <th>@item.Name</th>
+                            <th>@item.Description</th>
+                            <th>@item.CreatedAt</th>
+
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+    </div>
+    </div>
+    </body>
+
+
+<a asp-action="SignOut" asp-controller="Home">
+    Cikis Yap
+</a>
+
+<a asp-action="CreateForm" asp-controller="Form">
+   Yeni Form Olustur
+</a>

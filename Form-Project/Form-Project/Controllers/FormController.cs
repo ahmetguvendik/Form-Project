@@ -1,20 +1,25 @@
-﻿using Form_Project.Interfaces;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFreamwork;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Form_Project.Controllers
 {
+    [Authorize]
     public class FormController : Controller
     {
-        private readonly IForm _form;
-        public FormController(IForm form)
-        {
-            _form = form;
-        }
+        FormManager formManager = new FormManager(new EfFormDal());
 
         public async Task<IActionResult> Index()
         {
-          var forms =  await _form.GetForm();
+         var forms = formManager.GetAll();
             return View(forms);
         }
+    
+        public IActionResult CreateForm()
+        {
+            return View();
+        }
+
     }
 }

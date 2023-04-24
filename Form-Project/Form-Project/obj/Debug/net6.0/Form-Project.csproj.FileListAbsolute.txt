@@ -92,3 +92,13 @@ C:\Users\ahmet\source\repos\Form-Project\Form-Project\bin\Debug\net6.0\Form-Proj
 C:\Users\ahmet\source\repos\Form-Project\Form-Project\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\ahmet\source\repos\Form-Project\Form-Project\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\ahmet\source\repos\Form-Project\Form-Project\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\ahmet\source\repos\Form-Project\Form-Project\bin\Debug\net6.0\EntityFramework.SqlServer.dll
+C:\Users\ahmet\source\repos\Form-Project\Form-Project\bin\Debug\net6.0\EntityFramework.dll
+C:\Users\ahmet\source\repos\Form-Project\Form-Project\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\ahmet\source\repos\Form-Project\Form-Project\bin\Debug\net6.0\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\ahmet\source\repos\Form-Project\Form-Project\bin\Debug\net6.0\BusinessLayer.dll
+C:\Users\ahmet\source\repos\Form-Project\Form-Project\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\ahmet\source\repos\Form-Project\Form-Project\bin\Debug\net6.0\EntityLayer.dll
+C:\Users\ahmet\source\repos\Form-Project\Form-Project\bin\Debug\net6.0\BusinessLayer.pdb
+C:\Users\ahmet\source\repos\Form-Project\Form-Project\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\ahmet\source\repos\Form-Project\Form-Project\bin\Debug\net6.0\EntityLayer.pdb

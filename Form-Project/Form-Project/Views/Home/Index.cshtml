@@ -1,35 +1,28 @@
-﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@using Form_Project.Models;
-@model CreateUserModel;
+﻿@model CreateUserModel;
+@{
+    ViewData["Title"] = "Kayit Ol";
+    Layout = "_Layout";
+}
+<script src="~/lib/jquery/jquery.js"></script>
+<script src="~/lib/jquery/jquery.min.js"></script>
+<script src="~/lib/jquery/jquery.slim.js"></script>
+<script src="~/lib/jquery/jquery.slim.min.js"></script>
+<link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+<link href="~/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/lib/twitter-bootstrap/css/bootstrap.rtl.css" rel="stylesheet" />
+<link href="~/lib/twitter-bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet" />
 
-<form asp-action="Index" asp-controller="Home" method="post">
-
-    <div>
-        <label>Kullanici Adinizi Giriniz</label>
-        <input type="text" asp-for=@Model.UserName />
+<form asp-action="Index" asp-controller="Home">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Username</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username" asp-for="@Model.UserName">
     </div>
-
     <br />
-
-    <div>
-        <label>Sifrenizi Giriniz</label>
-        <input type="password" asp-for=@Model.Password />
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" asp-for="@Model.Password">
     </div>
-
     <br />
-
-    <div>
-        <button>
-            Kayit Ol
-        </button>
-    </div>
-
-    <br />
-
-    <div>
-        <a asp-action="SignIn" asp-controller="Home">
-            Giriş Sayfasına Git
-        </a>
-    </div>
-
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a type="submit" class="btn btn-primary" asp-action="SignIn" asp-controller="Home">Login Page</a>
 </form>

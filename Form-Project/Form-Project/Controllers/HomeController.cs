@@ -1,48 +1,72 @@
-﻿using Form_Project.Interfaces;
+﻿using AutoMapper;
+using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFreamwork;
+using EntityLayer.Concrete;
 using Form_Project.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Form_Project.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IUser _user;
-        public HomeController(IUser user)
+        private readonly Microsoft.AspNetCore.Identity.UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
+        private readonly IMapper _mapper;
+
+        public HomeController(Microsoft.AspNetCore.Identity.UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IMapper mapper)
         {
-            _user = user;
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _mapper = mapper;
         }
+
         public IActionResult Index()
         {
             return View();
         }
 
+
+
         [HttpPost]
         public async Task<IActionResult> Index(CreateUserModel createUser)
         {
-            await _user.CreateUserAsync(createUser);
+            var userMapper = _mapper.Map<AppUser>(createUser);
+            var result = await _userManager.CreateAsync(userMapper, createUser.Password);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("SignIn", "Home");
+            }
             return View();
         }
 
         public IActionResult SignIn()
         {
-            return View(new SignInUserModel());
+            return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> SignIn(SignInUserModel model)
         {
-            if (ModelState.IsValid)
+            var userMapper = _mapper.Map<AppUser>(model);
+            var result = await _signInManager.PasswordSignInAsync(userMapper.UserName, model.Password, false, false);
+            if (result.Succeeded)
             {
-               var users = await _user.SignInUserAsync(model);
-                if(users != null)
-                {
-                    return RedirectToAction("Index", "Form");
-                }
-                
+                return RedirectToAction("Index", "Form");
             }
-       
-
             return View(model);
+        }
+
+        public async Task<IActionResult> SignOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("SignIn", "Home");
+        }
+
+        public IActionResult Error(int code)
+        {
+            return View();
         }
 
     }
