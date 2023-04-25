@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "qfkCe3v5G/fGFYqw3jVqF1rE/1ARzdngNeEHHjBKZUJF95NJG4rpDqpcmjFSWbIUg06b3+ev56FFVLbRHEx0QQ==",
+  "dgSpecHash": "VrQjTadDmT4LWpPrtNMbE4pfxeasi6RXlx7imDA9T8UYW+TKW4W/usx26audJYu7i9Wg1bCKnlLnm5YOAVy+hw==",
   "success": true,
   "projectFilePath": "C:\\Users\\ahmet\\source\\repos\\Form-Project\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ahmet\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\ahmet\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\ahmet\\.nuget\\packages\\entityframework\\6.1.0\\entityframework.6.1.0.nupkg.sha512",
+    "C:\\Users\\ahmet\\.nuget\\packages\\fluentvalidation\\11.5.2\\fluentvalidation.11.5.2.nupkg.sha512",
+    "C:\\Users\\ahmet\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\ahmet\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.2\\fluentvalidation.dependencyinjectionextensions.11.5.2.nupkg.sha512",
     "C:\\Users\\ahmet\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
     "C:\\Users\\ahmet\\.nuget\\packages\\microsoft.aspnet.identity.entityframework\\2.2.3\\microsoft.aspnet.identity.entityframework.2.2.3.nupkg.sha512",
     "C:\\Users\\ahmet\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

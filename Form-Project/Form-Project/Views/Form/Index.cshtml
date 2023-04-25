@@ -1,25 +1,40 @@
 ﻿@model List<Form>
 
-    @{
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
 
-    <head>
-        <title>Formlar</title>
+<head>
+    <a type="button" class="btn btn-primary" asp-action="SignOut" asp-controller="Home">
+        Sign Out
+    </a>
+    <title>Formlar</title>
     <script src="~/lib/jquery/jquery.js"></script>
     <script src="~/lib/jquery/jquery.min.js"></script>
     <script src="~/lib/jquery/jquery.slim.js"></script>
-    <script src="~/lib/jquery/jquery.slim.min.js"></script>   
+    <script src="~/lib/jquery/jquery.slim.min.js"></script>
     <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="~/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/lib/twitter-bootstrap/css/bootstrap.rtl.css" rel="stylesheet" />
     <link href="~/lib/twitter-bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet" />
-   
-    </head>
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.esm.js"></script>
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.esm.min.js"></script>
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.min.js"></script>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 
-    <body>
-        <div class="container">
-            <div class="col-md-6">
+<body>
+    <div class="container">
+        <div class="col-md-6">
 
             <table class="table">
                 <thead>
@@ -31,10 +46,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach(var item in Model)
+                    @foreach (var item in Model)
                     {
                         <tr>
-                            
+
                             <th>@item.Id</th>
                             <th>@item.Name</th>
                             <th>@item.Description</th>
@@ -45,15 +60,12 @@
 
                 </tbody>
             </table>
+        </div>
     </div>
-    </div>
-    </body>
 
 
-<a asp-action="SignOut" asp-controller="Home">
-    Cikis Yap
-</a>
+    <a type="button" class="btn btn-info btn-lg" asp-action="CreateForm" asp-controller="Form">Create New Form </a>
 
-<a asp-action="CreateForm" asp-controller="Form">
-   Yeni Form Olustur
-</a>
+</body>
+
+</html>

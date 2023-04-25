@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bDjC12RNhYfGwk6ZMG6NreUIHTKxLuFDZ38LBf6Y9T7a57XOw4IYVrbM4jYt34bZYZ4uJhYuHoV0dlkyqK1XQw==",
+  "dgSpecHash": "4Gf/BNe3QfdFEonzNYdjNTJaYEVRz6gzspDvD8xFfydKi8YVf0jwT1+y75/Q3dhZegRmuR1uWimJ+y3Fv+CL4w==",
   "success": true,
   "projectFilePath": "C:\\Users\\ahmet\\source\\repos\\Form-Project\\Form-Project\\Form-Project.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,8 @@
     "C:\\Users\\ahmet\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\ahmet\\.nuget\\packages\\entityframework\\6.1.0\\entityframework.6.1.0.nupkg.sha512",
     "C:\\Users\\ahmet\\.nuget\\packages\\fluentvalidation\\11.5.2\\fluentvalidation.11.5.2.nupkg.sha512",
+    "C:\\Users\\ahmet\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\ahmet\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.2\\fluentvalidation.dependencyinjectionextensions.11.5.2.nupkg.sha512",
     "C:\\Users\\ahmet\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\ahmet\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
     "C:\\Users\\ahmet\\.nuget\\packages\\microsoft.aspnet.identity.entityframework\\2.2.3\\microsoft.aspnet.identity.entityframework.2.2.3.nupkg.sha512",

@@ -2,7 +2,7 @@
 using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFreamwork;
 using EntityLayer.Concrete;
-using Form_Project.Models;
+using Form_Project.Models.User;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -32,11 +32,21 @@ namespace Form_Project.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(CreateUserModel createUser)
         {
-            var userMapper = _mapper.Map<AppUser>(createUser);
-            var result = await _userManager.CreateAsync(userMapper, createUser.Password);
-            if (result.Succeeded)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("SignIn", "Home");
+                var userMapper = _mapper.Map<AppUser>(createUser);
+                var result = await _userManager.CreateAsync(userMapper, createUser.Password);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("SignIn", "Home");
+                }
+                else
+                {
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError("", item.Description);
+                    }
+                }
             }
             return View();
         }
@@ -49,12 +59,24 @@ namespace Form_Project.Controllers
         [HttpPost]
         public async Task<IActionResult> SignIn(SignInUserModel model)
         {
-            var userMapper = _mapper.Map<AppUser>(model);
-            var result = await _signInManager.PasswordSignInAsync(userMapper.UserName, model.Password, false, false);
-            if (result.Succeeded)
+           
+
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("Index", "Form");
+                var userMapper = _mapper.Map<AppUser>(model);           
+                var result = await _signInManager.PasswordSignInAsync(userMapper.UserName, model.Password, false, false);
+                if (result.Succeeded)
+                {
+                   
+                        return RedirectToAction("Index", "Form");
+                }
+                else
+                {
+                    return View();
+                }
+
             }
+
             return View(model);
         }
 
@@ -64,10 +86,6 @@ namespace Form_Project.Controllers
             return RedirectToAction("SignIn", "Home");
         }
 
-        public IActionResult Error(int code)
-        {
-            return View();
-        }
 
     }
 }

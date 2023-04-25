@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using EntityLayer.Concrete;
-using Form_Project.Models;
+using Form_Project.Models.Form;
+using Form_Project.Models.User;
 
 namespace Form_Project.Mapping
 {
@@ -12,6 +13,8 @@ namespace Form_Project.Mapping
                 CreateMap<AppUser, SignInUserModel>();
                 CreateMap<AppUser, CreateUserModel>();
                 CreateMap<CreateUserModel, AppUser>();
+                CreateMap<CreateFormModel, Form>();
+                CreateMap<Form, CreateFormModel>();
             }
         
     }
